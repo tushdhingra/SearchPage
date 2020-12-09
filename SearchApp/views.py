@@ -24,5 +24,5 @@ def index(request):
 
 def searchbar(request):
 	search=request.GET['search']
-	specific = profile.objects.filter(name__iexact=search)
+	specific = profile.objects.filter(name__contains=search)
 	return render(request,'SearchApp/searchbar.html',{'post':specific})
